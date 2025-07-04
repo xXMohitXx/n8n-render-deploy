@@ -3,25 +3,28 @@ services:
     name: n8n
     env: docker
     plan: free
+    repo: https://github.com/xXMohitXx/n8n-render-deploy
+    branch: main
+    dockerfilePath: ./Dockerfile
     autoDeploy: true
     envVars:
       - key: DB_TYPE
-        value: postgresdb
+        value: postgres
       - key: DB_POSTGRESDB_HOST
-        value: <your-postgres-host>
+        value: db.iubfpfstlqpmojgjrwsr.supabase.co
       - key: DB_POSTGRESDB_PORT
-        value: "5432"
+        value: 5432
       - key: DB_POSTGRESDB_DATABASE
-        value: <your-db-name>
+        value: postgres
       - key: DB_POSTGRESDB_USER
-        value: <your-db-user>
+        value: postgres
       - key: DB_POSTGRESDB_PASSWORD
-        value: <your-db-password>
+        sync: false
+      - key: GENERIC_TIMEZONE
+        value: Asia/Kolkata
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
       - key: N8N_BASIC_AUTH_USER
         value: admin
       - key: N8N_BASIC_AUTH_PASSWORD
-        value: supersecurepassword
-      - key: WEBHOOK_URL
-        value: https://<render-subdomain>.onrender.com/
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+        value: pas@_@123
