@@ -1,3 +1,7 @@
-FROM n8nio/n8n
+FROM n8nio/n8n:latest
 
-# Optional: add any scripts or workflows if needed here
+# Optional: if using your own workflows or custom modules
+# COPY .n8n /home/node/.n8n
+
+# Expose port (default Render web services port)
+EXPOSE 5678
